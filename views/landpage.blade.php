@@ -142,84 +142,36 @@
       <div class="rooms-section-slide">
         <div class="swiper mySwiperRooms">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="swiper-slide-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="swiper-slide-bottom">
-                <div class="swiper-slide-bottom--flex">
-                  <div class="swiper-slide-bottom-title">
-                    Minimal Duplex Room
-                  </div>
-                  <div class="swiper-slide-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
+            @foreach ($rooms as $room)
+              <div class="swiper-slide">
+                <div class="swiper-slide-top">
+                  <object data="assets/icons/bed.svg" width="18"></object>
+                  <object data="assets/icons/wifi.svg" width="18"></object>
+                  <object data="assets/icons/car.svg" width="18"></object>
+                  <object
+                    data="assets/icons/air-conditioner.svg"
+                    width="18"
+                  ></object>
+                  <object data="assets/icons/gym.svg" width="18"></object>
+                  <object data="assets/icons/smoke-free.svg" width="18"></object>
+                  <object data="assets/icons/cocktail.svg" width="18"></object>
                 </div>
-                <div class="swiper-slide-bottom-price">
-                  $345<span>/Night</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-slide-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <img src="./assets/hotel-rooms/room2.jpg" />
-              <div class="swiper-slide-bottom">
-                <div class="swiper-slide-bottom--flex">
-                  <div class="swiper-slide-bottom-title">Duplex Room</div>
-                  <div class="swiper-slide-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
+                <img src={{$room['photo']}} alt={{$room['roomName']}} />
+                <div class="swiper-slide-bottom">
+                  <div class="swiper-slide-bottom--flex">
+                    <div class="swiper-slide-bottom-title">
+                      {{$room['roomType']}}
+                    </div>
+                    <div class="swiper-slide-bottom-content">
+                      {{$room['roomDescription']}}
+                    </div>
+                  </div>
+                  <div class="swiper-slide-bottom-price">
+                    ${{$room['ratePerNight']}}<span>/Night</span>
                   </div>
                 </div>
-                <div class="swiper-slide-bottom-price">
-                  $385<span>/Night</span>
-                </div>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="swiper-slide-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-              </div>
-              <img src="./assets/hotel-rooms/room3.jpg" />
-              <div class="swiper-slide-bottom">
-                <div class="swiper-slide-bottom--flex">
-                  <div class="swiper-slide-bottom-title">The bright Room</div>
-                  <div class="swiper-slide-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="swiper-slide-bottom-price">
-                  $299<span>/Night</span>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -734,6 +686,7 @@
         </div>
       </div>
     </section>
+    
   @endsection
 
   @section('footer')
