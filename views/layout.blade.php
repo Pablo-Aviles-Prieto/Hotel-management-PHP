@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@section('head')
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Miranda by Pablo Avilés</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/homepage.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <script src="scripts/mobile-menu.js" defer></script>
-    <script src="scripts/sliders.js" type="module" defer></script>
-    <script src="scripts/volume-control.js" defer></script>
-  </head>
-@show
+<head>
+  @section('head')
+  @show
+</head>
 
 
 <body>
@@ -40,20 +26,20 @@
             </div>
             <div class="container-nav-navbar-content">
               <div class="container-nav-navbar-content-logo-container">
-                <a href="./index.html">
+                <a href="./index.php">
                   <div class="container-nav-navbar-content-logo-container-square">
                     H
                   </div>
                 </a>
                 <div class="container-nav-navbar-content-logo-container-text">
-                  <a href="./index.html"><span>Hotel</span> Miranda</a>
+                  <a href="./index.php"><span>Hotel</span> Miranda</a>
                 </div>
                 <div class="container-nav-navbar-content-pages">
                   <ul>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><a href="./rooms-grid.html">Rooms</a></li>
-                    <li><a href="./offers.html">Offers</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./about-us.php">About Us</a></li>
+                    <li><a href="./rooms-grid.php">Rooms</a></li>
+                    <li><a href="./offers.php">Offers</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
                   </ul>
                 </div>
               </div>
@@ -71,10 +57,10 @@
       </div>
       <aside class="mobile-menu mobile-menu--closed">
         <ul>
-          <li><a href="./about-us.html">About Us</a></li>
-          <li><a href="./rooms-grid.html">Rooms</a></li>
-          <li><a href="./offers.html">Offers</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./about-us.php">About Us</a></li>
+          <li><a href="./rooms-grid.php">Rooms</a></li>
+          <li><a href="./offers.php">Offers</a></li>
+          <li><a href="./contact.php">Contact</a></li>
         </ul>
       </aside>
     </header>
