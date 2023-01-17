@@ -1,5 +1,5 @@
 <?php
-include "lib/BladeOne.php";
+include "libs/BladeOne/BladeOne.php";
 
 use eftec\bladeone;
 
