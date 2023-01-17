@@ -1,4 +1,4 @@
 <?php
 include "utils/blade_connection.php";
-echo $blade->run("contact");
+echo $blade->run("offers");
 ?>
