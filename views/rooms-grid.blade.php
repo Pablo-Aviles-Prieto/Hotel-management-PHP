@@ -46,9 +46,15 @@
     <section id="rooms-section">
       <div class="swiper mySwiperRoomsPage">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
+          @for ($i = 0; $i < $rooms_length; $i++)
+            @if ($i % 6 === 0 && $i !== 0)
+              </div>
+            @endif
+            @if ($i % 6 === 0)
+              <div class="swiper-slide">
+            @endif
+              <div class="rooms-card">
+              <img src={{$rooms[$i]['photo']}} alt={{$rooms[$i]['roomName']}} />
               <div class="rooms-card-top">
                 <object data="assets/icons/bed.svg" width="18"></object>
                 <object data="assets/icons/wifi.svg" width="18"></object>
@@ -63,319 +69,20 @@
               </div>
               <div class="rooms-card-bottom">
                 <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
+                  <div class="rooms-card-bottom-title">{{$rooms[$i]['roomName']}}</div>
                   <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
+                    {{$rooms[$i]['roomDescription']}}
                   </div>
                 </div>
                 <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
+                  ${{$rooms[$i]['ratePerNight']}}/Night<span>Booking Now</span>
                 </div>
               </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
               </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
+            @if ($i === ($rooms_length - 1))
               </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-            <div class="rooms-card">
-              <img src="./assets/hotel-rooms/room1.jpg" />
-              <div class="rooms-card-top">
-                <object data="assets/icons/bed.svg" width="18"></object>
-                <object data="assets/icons/wifi.svg" width="18"></object>
-                <object data="assets/icons/car.svg" width="18"></object>
-                <object
-                  data="assets/icons/air-conditioner.svg"
-                  width="18"
-                ></object>
-                <object data="assets/icons/gym.svg" width="18"></object>
-                <object data="assets/icons/smoke-free.svg" width="18"></object>
-                <object data="assets/icons/cocktail.svg" width="18"></object>
-              </div>
-              <div class="rooms-card-bottom">
-                <div class="rooms-card-bottom--flex">
-                  <div class="rooms-card-bottom-title">Minimal Duplex Room</div>
-                  <div class="rooms-card-bottom-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, amet alias velit quia consequuntur dolorum iure.
-                  </div>
-                </div>
-                <div class="rooms-card-bottom-price">
-                  $345/Night<span>Booking Now</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            @endif
+          @endfor
         </div>
         <div class="swiper-pagination"></div>
       </div>
