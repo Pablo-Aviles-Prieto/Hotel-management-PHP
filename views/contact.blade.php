@@ -30,7 +30,7 @@
     <script type="module" src="scripts/maps.js"></script>
     <script src="scripts/mobile-menu.js" defer></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=geometry"
+      src="https://maps.googleapis.com/maps/api/js?key={{$maps_api}}&callback=initMap&libraries=geometry"
       defer
     ></script>
   @endsection
@@ -96,21 +96,15 @@
           </div>
         </div>
         <div id="map"></div>
-        <!-- <div class="info-container-img">
-          <img
-            src="./assets/main-hotel/underground1.jpg"
-            alt="View of the hotel"
-          />
-        </div> -->
       </div>
     </section>
     <section id="form-section">
       <div class="form-container">
-        <form class="form-container-content">
+        <form class="form-container-content" action="contact.php" method="POST">
           <div class="form-container-content-info">
             <div class="form-container-content-info-block">
               <div class="form-container-content-info-block--container">
-                <input placeholder="Your full name" id="name" type="text" />
+                <input placeholder="Your full name" name="name" type="text" />
                 <object
                   data="assets/icons/person_outline_gold.svg"
                   width="18"
@@ -119,7 +113,7 @@
               <div class="form-container-content-info-block--container">
                 <input
                   placeholder="Add phone number"
-                  id="phone"
+                  name="phone"
                   type="number"
                 />
                 <object data="assets/icons/phone.svg" width="18"></object>
@@ -129,23 +123,23 @@
               <div class="form-container-content-info-block--container">
                 <input
                   placeholder="Enter email address"
-                  id="email"
+                  name="email"
                   type="email"
                 />
                 <object data="assets/icons/mail.svg" width="18"></object>
               </div>
               <div class="form-container-content-info-block--container">
-                <input placeholder="Enter subject" id="subject" type="text" />
+                <input placeholder="Enter subject" name="subject" type="text" />
                 <object data="assets/icons/book.svg" width="18"></object>
               </div>
             </div>
           </div>
           <div class="form-container-content-info-block--container">
-            <textarea placeholder="Enter message" rows="7"></textarea>
+            <textarea name="message" placeholder="Enter message" rows="7"></textarea>
             <object data="assets/icons/pencil.svg" width="18"></object>
           </div>
           <div class="form-container-content-btn">
-            <button>Send</button>
+            <button type="submit">Send</button>
           </div>
         </form>
       </div>
