@@ -32,8 +32,8 @@
           <p>The perfect base for you</p>
         </div>
         <div class="first-section-container-btns">
-          <button class="solid-btn">Take a tour</button
-          ><button class="empty-btn">Learn more</button>
+          <button class="solid-btn" onclick="location.href='about-us.php'">Take a tour</button
+          ><button class="empty-btn" onclick="location.href='#about-section'">Learn more</button>
         </div>
       </div>
     </section>
@@ -50,7 +50,7 @@
                 name="checkin"
                 value={{date("Y-m-d")}}
                 min="2021-10-24"
-                max="2023-10-24"
+                max="2024-10-24"
                 placeholder="Date and Time"
                 required
               />
@@ -64,7 +64,7 @@
                 name="checkout"
                 value={{date("Y-m-d", strtotime("+5 days"))}}
                 min="2021-10-24"
-                max="2023-10-24"
+                max="2024-10-24"
                 placeholder="Date and Time"
                 required
               />
@@ -158,7 +158,9 @@
                   <object data="assets/icons/smoke-free.svg" width="18"></object>
                   <object data="assets/icons/cocktail.svg" width="18"></object>
                 </div>
-                <img src={{$room['photo']}} alt={{$room['roomName']}} />
+                <a href="rooms-details.php?id={{$room['id']}}">
+                  <img src={{$room['photo']}} alt={{$room['roomName']}} />
+                </a>
                 <div class="swiper-slide-bottom">
                   <div class="swiper-slide-bottom--flex">
                     <div class="swiper-slide-bottom-title">

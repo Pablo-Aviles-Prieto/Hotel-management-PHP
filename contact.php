@@ -1,7 +1,6 @@
 <?php
 include "utils/blade_connection.php";
 include "utils/throw_alert.php";
-// include "utils/get_dotenv.php";
 include "db/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
