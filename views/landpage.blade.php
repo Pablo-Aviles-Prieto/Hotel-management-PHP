@@ -39,7 +39,7 @@
     </section>
     <section id="availability-section">
       <div class="availability-container">
-        <form class="availability-container-form">
+        <form class="availability-container-form" action="rooms-list.php" method="GET">
           <div class="availability-container-form--flex">
             <div class="availability-container-form-input">
               <label for="arrival-input">Arrival Date</label>
@@ -47,7 +47,8 @@
                 class="input-field date"
                 type="date"
                 id="arrival-input"
-                value="2022-10-25"
+                name="checkin"
+                value={{date("Y-m-d")}}
                 min="2021-10-24"
                 max="2023-10-24"
                 placeholder="Date and Time"
@@ -60,7 +61,8 @@
                 class="input-field date"
                 type="date"
                 id="departure-input"
-                value="2022-10-31"
+                name="checkout"
+                value={{date("Y-m-d", strtotime("+5 days"))}}
                 min="2021-10-24"
                 max="2023-10-24"
                 placeholder="Date and Time"
@@ -69,7 +71,7 @@
             </div>
           </div>
           <div class="availability-container-form-btn">
-            <button>Check availability</button>
+            <button type="submit">Check availability</button>
           </div>
         </form>
       </div>

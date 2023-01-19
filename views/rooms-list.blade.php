@@ -46,7 +46,53 @@
     <section id="rooms-section">
       <div class="swiper mySwiperRoomsPage">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          @for ($i = 0; $i < $rooms_length; $i++)
+            @if ($i % 3 === 0 && $i !== 0)
+              </div>
+            @endif
+            @if ($i % 3 === 0)
+              <div class="swiper-slide">
+            @endif
+              <div class="rooms-card">
+                <img src={{$rooms[$i]['photo']}} alt={{$rooms[$i]['roomName']}} />
+                <div class="rooms-card--flex">
+                  <div class="rooms-card--flex2">
+                    <div class="rooms-card-top">
+                      <object data="assets/icons/bed.svg" width="18"></object>
+                      <object data="assets/icons/wifi.svg" width="18"></object>
+                      <object data="assets/icons/car.svg" width="18"></object>
+                      <object
+                        data="assets/icons/air-conditioner.svg"
+                        width="18"
+                      ></object>
+                      <object data="assets/icons/gym.svg" width="18"></object>
+                      <object
+                        data="assets/icons/smoke-free.svg"
+                        width="18"
+                      ></object>
+                      <object
+                        data="assets/icons/cocktail.svg"
+                        width="18"
+                      ></object>
+                    </div>
+                    <div class="rooms-card-bottom">
+                      <div class="rooms-card-bottom--flex">
+                        <div class="rooms-card-bottom-title">
+                          {{$rooms[$i]['roomName']}}
+                        </div>
+                        <div class="rooms-card-bottom-content">
+                          {{$rooms[$i]['roomDescription']}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rooms-card-bottom-price">
+                    <p id="price-number"><span>${{$rooms[$i]['ratePerNight']}}</span>/Night</p>
+                    <p id="price-booking">Booking Now</p>
+                  </div>
+                </div>
+              </div>
+          {{-- <div class="swiper-slide">
             <div class="rooms-card">
               <img src="./assets/hotel-rooms/room1.jpg" />
               <div class="rooms-card--flex">
@@ -411,7 +457,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
+            @if ($i === ($rooms_length - 1))
+              </div>
+            @endif
+          @endfor
         </div>
         <div class="swiper-pagination"></div>
       </div>
