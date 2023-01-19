@@ -24,6 +24,7 @@ Hotel Miranda public website for customers where they can check the room availab
 - Be aware that fresh installation of PHP on windows OS needs to set the `php.ini` file since it comes with php.ini-development and php.ini-production. And create the environment variable path to the php installation folder.
 
 - Also inside `php.ini` you need to make sure that mysqli and mbstring extensions are not commented with the semicolon `;` .
+
 _You can check if both extensions are running using_  `php -m`  _or setting the_  `info.php`  _page to display the info about the running PHP package._
 
 2. Set the variable data in `.env` file as shown in `.env.example` to make it work against a MySQL instance and make the google maps API work.
