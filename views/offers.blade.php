@@ -45,303 +45,102 @@
     </section>
     <section id="offers-section">
       <div class="offers-section">
-        <div class="offers-section-card">
-          <div class="offers-section-card-img">
-            <img src="./assets/hotel-rooms/room1.jpg" alt="Hotel room" />
-          </div>
-          <div class="offers-section-card--divider">
-            <div class="offers-section-card-title">
-              <div class="offers-section-card-title--group">
-                <p class="offers-section-card-title--legend">Double bed</p>
-                <h3>Luxury Double Bed</h3>
+        @foreach ($offer_rooms as $offer_room)
+          <div class="offers-section-card">
+            <div class="offers-section-card-img">
+              <img src={{$offer_room['photo']}} alt={{$offer_room['roomName']}} />
+            </div>
+            <div class="offers-section-card--divider">
+              <div class="offers-section-card-title">
+                <div class="offers-section-card-title--group">
+                  <p class="offers-section-card-title--legend">{{$offer_room['bedType']}}</p>
+                  <h3>{{$offer_room['roomType']}}</h3>
+                </div>
+                <div class="offers-section-card-title-price">
+                  <p id="old-price">${{$offer_room['ratePerNight']}}<span>/Night</span></p>
+                  <p id="new-price">${{$offer_room['offerPrice']}}<span>/Night</span></p>
+                </div>
               </div>
-              <div class="offers-section-card-title-price">
-                <p id="old-price">$500<span>/Night</span></p>
-                <p id="new-price">$345<span>/Night</span></p>
+              <div class="offers-section-card-description">
+                <p class="offers-section-card-description-text">
+                  {{$offer_room['roomDescription']}}
+                </p>
+                <div class="offers-section-card-description-grid">
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/air-conditioner.svg"
+                      width="20"
+                    ></object>
+                    <p>Air conditioner</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/wifi.svg"
+                      width="20"
+                    ></object>
+                    <p>High speed Wifi</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/breakfast.svg"
+                      width="20"
+                    ></object>
+                    <p>Breakfast</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/shower.svg"
+                      width="20"
+                    ></object>
+                    <p>Shower</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object data="assets/commodities/bed.svg" width="20"></object>
+                    <p>Single bed</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/towel.svg"
+                      width="20"
+                    ></object>
+                    <p>Towels</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/support.svg"
+                      width="20"
+                    ></object>
+                    <p>24/7 Online Support</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/key-locker.svg"
+                      width="20"
+                    ></object>
+                    <p>Strong Locker</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/smart-security.svg"
+                      width="20"
+                    ></object>
+                    <p>Smart Security</p>
+                  </div>
+                  <div class="offers-section-card-description-grid-card">
+                    <object
+                      data="assets/commodities/engineer-expert.svg"
+                      width="20"
+                    ></object>
+                    <p>Expert Team</p>
+                  </div>
+                </div>
+                <button class="offers-section-card-description-btn">
+                  Book now
+                </button>
               </div>
             </div>
-            <div class="offers-section-card-description">
-              <p class="offers-section-card-description-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehend erit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-              </p>
-              <div class="offers-section-card-description-grid">
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/air-conditioner.svg"
-                    width="20"
-                  ></object>
-                  <p>Air conditioner</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/wifi.svg"
-                    width="20"
-                  ></object>
-                  <p>High speed Wifi</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/breakfast.svg"
-                    width="20"
-                  ></object>
-                  <p>Breakfast</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/shower.svg"
-                    width="20"
-                  ></object>
-                  <p>Shower</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object data="assets/commodities/bed.svg" width="20"></object>
-                  <p>Single bed</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/towel.svg"
-                    width="20"
-                  ></object>
-                  <p>Towels</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/support.svg"
-                    width="20"
-                  ></object>
-                  <p>24/7 Online Support</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/key-locker.svg"
-                    width="20"
-                  ></object>
-                  <p>Strong Locker</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/smart-security.svg"
-                    width="20"
-                  ></object>
-                  <p>Smart Security</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/engineer-expert.svg"
-                    width="20"
-                  ></object>
-                  <p>Expert Team</p>
-                </div>
-              </div>
-              <button class="offers-section-card-description-btn">
-                Book now
-              </button>
-            </div>
           </div>
-        </div>
-        <div class="offers-section-card">
-          <div class="offers-section-card-img">
-            <img src="./assets/hotel-rooms/room3.jpg" alt="Hotel room" />
-          </div>
-          <div class="offers-section-card--divider">
-            <div class="offers-section-card-title">
-              <div class="offers-section-card-title--group">
-                <p class="offers-section-card-title--legend">Double bed</p>
-                <h3>Luxury Double Bed</h3>
-              </div>
-              <div class="offers-section-card-title-price">
-                <p id="old-price">$500<span>/Night</span></p>
-                <p id="new-price">$345<span>/Night</span></p>
-              </div>
-            </div>
-            <div class="offers-section-card-description">
-              <p class="offers-section-card-description-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehend erit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-              </p>
-              <div class="offers-section-card-description-grid">
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/air-conditioner.svg"
-                    width="20"
-                  ></object>
-                  <p>Air conditioner</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/wifi.svg"
-                    width="20"
-                  ></object>
-                  <p>High speed Wifi</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/breakfast.svg"
-                    width="20"
-                  ></object>
-                  <p>Breakfast</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/shower.svg"
-                    width="20"
-                  ></object>
-                  <p>Shower</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object data="assets/commodities/bed.svg" width="20"></object>
-                  <p>Single bed</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/towel.svg"
-                    width="20"
-                  ></object>
-                  <p>Towels</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/support.svg"
-                    width="20"
-                  ></object>
-                  <p>24/7 Online Support</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/key-locker.svg"
-                    width="20"
-                  ></object>
-                  <p>Strong Locker</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/smart-security.svg"
-                    width="20"
-                  ></object>
-                  <p>Smart Security</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/engineer-expert.svg"
-                    width="20"
-                  ></object>
-                  <p>Expert Team</p>
-                </div>
-              </div>
-              <button class="offers-section-card-description-btn">
-                Book now
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="offers-section-card">
-          <div class="offers-section-card-img">
-            <img src="./assets/hotel-rooms/room3.jpg" alt="Hotel room" />
-          </div>
-          <div class="offers-section-card--divider">
-            <div class="offers-section-card-title">
-              <div class="offers-section-card-title--group">
-                <p class="offers-section-card-title--legend">Double bed</p>
-                <h3>Luxury Double Bed</h3>
-              </div>
-              <div class="offers-section-card-title-price">
-                <p id="old-price">$500<span>/Night</span></p>
-                <p id="new-price">$345<span>/Night</span></p>
-              </div>
-            </div>
-            <div class="offers-section-card-description">
-              <p class="offers-section-card-description-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehend erit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-              </p>
-              <div class="offers-section-card-description-grid">
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/air-conditioner.svg"
-                    width="20"
-                  ></object>
-                  <p>Air conditioner</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/wifi.svg"
-                    width="20"
-                  ></object>
-                  <p>High speed Wifi</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/breakfast.svg"
-                    width="20"
-                  ></object>
-                  <p>Breakfast</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/shower.svg"
-                    width="20"
-                  ></object>
-                  <p>Shower</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object data="assets/commodities/bed.svg" width="20"></object>
-                  <p>Single bed</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/towel.svg"
-                    width="20"
-                  ></object>
-                  <p>Towels</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/support.svg"
-                    width="20"
-                  ></object>
-                  <p>24/7 Online Support</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/key-locker.svg"
-                    width="20"
-                  ></object>
-                  <p>Strong Locker</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/smart-security.svg"
-                    width="20"
-                  ></object>
-                  <p>Smart Security</p>
-                </div>
-                <div class="offers-section-card-description-grid-card">
-                  <object
-                    data="assets/commodities/engineer-expert.svg"
-                    width="20"
-                  ></object>
-                  <p>Expert Team</p>
-                </div>
-              </div>
-              <button class="offers-section-card-description-btn">
-                Book now
-              </button>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </section>
     <section id="popular-section">
@@ -352,9 +151,10 @@
         </div>
         <div class="swiper mySwiperOffers">
           <div class="swiper-wrapper">
+            @for ($i = 0; $i < 5; $i++)
             <div class="swiper-slide">
               <div class="rooms-card">
-                <img src="./assets/hotel-rooms/room1.jpg" />
+                <img src={{$rooms[$i]['photo']}} alt={{$rooms[$i]['roomName']}} />
                 <div class="rooms-card-top">
                   <object data="assets/icons/bed.svg" width="18"></object>
                   <object data="assets/icons/wifi.svg" width="18"></object>
@@ -373,20 +173,20 @@
                 <div class="rooms-card-bottom">
                   <div class="rooms-card-bottom--flex">
                     <div class="rooms-card-bottom-title">
-                      Minimal Duplex Room
+                      {{$rooms[$i]['roomType']}}
                     </div>
                     <div class="rooms-card-bottom-content">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Eos, amet alias velit quia.
+                      {{$rooms[$i]['roomDescription']}}
                     </div>
                   </div>
                   <div class="rooms-card-bottom-price">
-                    $345/Night<span>Booking Now</span>
+                    ${{$rooms[$i]['ratePerNight']}}/Night<span>Booking Now</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            @endfor
+            {{-- <div class="swiper-slide">
               <div class="rooms-card">
                 <img src="./assets/hotel-rooms/room2.jpg" />
                 <div class="rooms-card-top">
@@ -453,7 +253,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>

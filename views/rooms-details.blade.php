@@ -47,49 +47,53 @@
       <div class="details-container">
         <div class="details-container-title">
           <div class="details-container-title-room">
-            <p>Double Bed</p>
-            <h3>Luxury Double Bed</h3>
+            <p>{{$room['roomType']}}</p>
+            <h3>{{$room['bedType']}}</h3>
           </div>
           <div class="details-container-title-price">
-            $354<span>/Night</span>
+            ${{$room['ratePerNight']}}<span>/Night</span>
           </div>
         </div>
         <div class="details-container-img">
-          <img src="./assets/hotel-rooms/room3.jpg" alt="Hotel room" />
+          <img src={{$room['photo']}} alt={{$room['roomName']}} />
         </div>
         <div class="details-container-availability">
           <p>Check Availability</p>
-          <form class="details-container-availability-form">
+          <form class="details-container-availability-form"  action="rooms-details.php" method="GET">
+            <input type="hidden" name="id" value="{{$room['id']}}">
             <div class="details-container-availability-form-block">
               <label for="check-in-input">Check In</label>
-              <input id="check-in-input" type="date" />
+              <input
+                class="input-field date"
+                type="date"
+                id="check-in-input"
+                name="checkin"
+                value={{date("Y-m-d")}}
+                min="2021-10-24"
+                max="2024-10-24"
+                placeholder="Date and Time"
+                required
+              />
             </div>
             <div class="details-container-availability-form-block">
               <label for="check-out-input">Check Out</label>
-              <input id="check-out-input" type="date" />
+              <input
+                class="input-field date"
+                type="date"
+                id="check-out-input"
+                name="checkout"
+                value={{date("Y-m-d", strtotime("+5 days"))}}
+                min="2021-10-24"
+                max="2024-10-24"
+                placeholder="Date and Time"
+                required
+              />
             </div>
             <button type="submit">Check Availability</button>
           </form>
         </div>
         <div class="details-container-info">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Sed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-            inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-            aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-            ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-            quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem.
-          </p>
+          <p>{{$room['roomDescription']}}</p>
         </div>
       </div>
     </section>
