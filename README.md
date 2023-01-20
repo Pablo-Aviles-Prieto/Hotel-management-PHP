@@ -37,3 +37,7 @@ _You can check if both extensions are running using_  `php -m`  _or setting the_
  $ php -S localhost:8000 // you can choose whichever free port you have
 ```
 _As side note, this app works with the [EFTEC\BladeOne](https://github.com/EFTEC/BladeOne) repo (BladeOne outside of Laravel) and the [vlucas\phpdotenv](https://github.com/vlucas/phpdotenv) repo, both installed manually inside the libs folder. (You could install both via composer for easier installation/manteinence)._
+
+## 💻 Take a look
+
+[https://hotelmiranda.000webhostapp.com/](https://hotelmiranda.000webhostapp.com/)
